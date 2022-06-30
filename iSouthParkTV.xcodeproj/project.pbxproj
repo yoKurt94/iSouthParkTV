@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E6DF404286E260200959657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DF403286E260200959657 /* AppDelegate.swift */; };
+		3E6DF406286E260200959657 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DF405286E260200959657 /* ViewController.swift */; };
+		3E6DF409286E260200959657 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6DF407286E260200959657 /* Main.storyboard */; };
+		3E6DF40B286E260300959657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E6DF40A286E260300959657 /* Assets.xcassets */; };
+		3E6DF40E286E260300959657 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6DF40C286E260300959657 /* LaunchScreen.storyboard */; };
+		3E6DF418286E260300959657 /* iSouthParkTVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DF417286E260300959657 /* iSouthParkTVTests.swift */; };
+		3E6DF422286E260300959657 /* iSouthParkTVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DF421286E260300959657 /* iSouthParkTVUITests.swift */; };
+		3E6DF424286E260300959657 /* iSouthParkTVUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DF423286E260300959657 /* iSouthParkTVUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3E6DF414286E260300959657 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E6DF3F8286E260200959657 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E6DF3FF286E260200959657;
+			remoteInfo = iSouthParkTV;
+		};
+		3E6DF41E286E260300959657 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E6DF3F8286E260200959657 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E6DF3FF286E260200959657;
+			remoteInfo = iSouthParkTV;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3E6DF400286E260200959657 /* iSouthParkTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSouthParkTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E6DF403286E260200959657 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3E6DF405286E260200959657 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3E6DF408286E260200959657 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3E6DF40A286E260300959657 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3E6DF40D286E260300959657 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3E6DF413286E260300959657 /* iSouthParkTVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSouthParkTVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E6DF417286E260300959657 /* iSouthParkTVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSouthParkTVTests.swift; sourceTree = "<group>"; };
+		3E6DF41D286E260300959657 /* iSouthParkTVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSouthParkTVUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E6DF421286E260300959657 /* iSouthParkTVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSouthParkTVUITests.swift; sourceTree = "<group>"; };
+		3E6DF423286E260300959657 /* iSouthParkTVUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSouthParkTVUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3E6DF3FD286E260200959657 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E6DF410286E260300959657 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E6DF41A286E260300959657 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3E6DF3F7286E260200959657 = {
+			isa = PBXGroup;
+			children = (
+				3E6DF402286E260200959657 /* iSouthParkTV */,
+				3E6DF416286E260300959657 /* iSouthParkTVTests */,
+				3E6DF420286E260300959657 /* iSouthParkTVUITests */,
+				3E6DF401286E260200959657 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3E6DF401286E260200959657 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3E6DF400286E260200959657 /* iSouthParkTV.app */,
+				3E6DF413286E260300959657 /* iSouthParkTVTests.xctest */,
+				3E6DF41D286E260300959657 /* iSouthParkTVUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3E6DF402286E260200959657 /* iSouthParkTV */ = {
+			isa = PBXGroup;
+			children = (
+				3E6DF403286E260200959657 /* AppDelegate.swift */,
+				3E6DF405286E260200959657 /* ViewController.swift */,
+				3E6DF407286E260200959657 /* Main.storyboard */,
+				3E6DF40A286E260300959657 /* Assets.xcassets */,
+				3E6DF40C286E260300959657 /* LaunchScreen.storyboard */,
+			);
+			path = iSouthParkTV;
+			sourceTree = "<group>";
+		};
+		3E6DF416286E260300959657 /* iSouthParkTVTests */ = {
+			isa = PBXGroup;
+			children = (
+				3E6DF417286E260300959657 /* iSouthParkTVTests.swift */,
+			);
+			path = iSouthParkTVTests;
+			sourceTree = "<group>";
+		};
+		3E6DF420286E260300959657 /* iSouthParkTVUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3E6DF421286E260300959657 /* iSouthParkTVUITests.swift */,
+				3E6DF423286E260300959657 /* iSouthParkTVUITestsLaunchTests.swift */,
+			);
+			path = iSouthParkTVUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3E6DF3FF286E260200959657 /* iSouthParkTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E6DF427286E260300959657 /* Build configuration list for PBXNativeTarget "iSouthParkTV" */;
+			buildPhases = (
+				3E6DF3FC286E260200959657 /* Sources */,
+				3E6DF3FD286E260200959657 /* Frameworks */,
+				3E6DF3FE286E260200959657 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iSouthParkTV;
+			productName = iSouthParkTV;
+			productReference = 3E6DF400286E260200959657 /* iSouthParkTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3E6DF412286E260300959657 /* iSouthParkTVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E6DF42A286E260300959657 /* Build configuration list for PBXNativeTarget "iSouthParkTVTests" */;
+			buildPhases = (
+				3E6DF40F286E260300959657 /* Sources */,
+				3E6DF410286E260300959657 /* Frameworks */,
+				3E6DF411286E260300959657 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E6DF415286E260300959657 /* PBXTargetDependency */,
+			);
+			name = iSouthParkTVTests;
+			productName = iSouthParkTVTests;
+			productReference = 3E6DF413286E260300959657 /* iSouthParkTVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3E6DF41C286E260300959657 /* iSouthParkTVUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E6DF42D286E260300959657 /* Build configuration list for PBXNativeTarget "iSouthParkTVUITests" */;
+			buildPhases = (
+				3E6DF419286E260300959657 /* Sources */,
+				3E6DF41A286E260300959657 /* Frameworks */,
+				3E6DF41B286E260300959657 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E6DF41F286E260300959657 /* PBXTargetDependency */,
+			);
+			name = iSouthParkTVUITests;
+			productName = iSouthParkTVUITests;
+			productReference = 3E6DF41D286E260300959657 /* iSouthParkTVUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3E6DF3F8286E260200959657 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					3E6DF3FF286E260200959657 = {
+						CreatedOnToolsVersion = 13.4;
+					};
+					3E6DF412286E260300959657 = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = 3E6DF3FF286E260200959657;
+					};
+					3E6DF41C286E260300959657 = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = 3E6DF3FF286E260200959657;
+					};
+				};
+			};
+			buildConfigurationList = 3E6DF3FB286E260200959657 /* Build configuration list for PBXProject "iSouthParkTV" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3E6DF3F7286E260200959657;
+			productRefGroup = 3E6DF401286E260200959657 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3E6DF3FF286E260200959657 /* iSouthParkTV */,
+				3E6DF412286E260300959657 /* iSouthParkTVTests */,
+				3E6DF41C286E260300959657 /* iSouthParkTVUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3E6DF3FE286E260200959657 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E6DF40E286E260300959657 /* LaunchScreen.storyboard in Resources */,
+				3E6DF40B286E260300959657 /* Assets.xcassets in Resources */,
+				3E6DF409286E260200959657 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E6DF411286E260300959657 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E6DF41B286E260300959657 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3E6DF3FC286E260200959657 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E6DF406286E260200959657 /* ViewController.swift in Sources */,
+				3E6DF404286E260200959657 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E6DF40F286E260300959657 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E6DF418286E260300959657 /* iSouthParkTVTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E6DF419286E260300959657 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E6DF424286E260300959657 /* iSouthParkTVUITestsLaunchTests.swift in Sources */,
+				3E6DF422286E260300959657 /* iSouthParkTVUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3E6DF415286E260300959657 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E6DF3FF286E260200959657 /* iSouthParkTV */;
+			targetProxy = 3E6DF414286E260300959657 /* PBXContainerItemProxy */;
+		};
+		3E6DF41F286E260300959657 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E6DF3FF286E260200959657 /* iSouthParkTV */;
+			targetProxy = 3E6DF41E286E260300959657 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3E6DF407286E260200959657 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E6DF408286E260200959657 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3E6DF40C286E260300959657 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E6DF40D286E260300959657 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3E6DF425286E260300959657 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 15.4;
+			};
+			name = Debug;
+		};
+		3E6DF426286E260300959657 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = appletvos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TVOS_DEPLOYMENT_TARGET = 15.4;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3E6DF428286E260300959657 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 582ADHA72D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yannikhoernschemeyer.iSouthParkTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Debug;
+		};
+		3E6DF429286E260300959657 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 582ADHA72D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yannikhoernschemeyer.iSouthParkTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Release;
+		};
+		3E6DF42B286E260300959657 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 582ADHA72D;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yannikhoernschemeyer.iSouthParkTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iSouthParkTV.app/iSouthParkTV";
+				TVOS_DEPLOYMENT_TARGET = 15.4;
+			};
+			name = Debug;
+		};
+		3E6DF42C286E260300959657 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 582ADHA72D;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yannikhoernschemeyer.iSouthParkTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iSouthParkTV.app/iSouthParkTV";
+				TVOS_DEPLOYMENT_TARGET = 15.4;
+			};
+			name = Release;
+		};
+		3E6DF42E286E260300959657 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 582ADHA72D;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yannikhoernschemeyer.iSouthParkTVUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = iSouthParkTV;
+			};
+			name = Debug;
+		};
+		3E6DF42F286E260300959657 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 582ADHA72D;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yannikhoernschemeyer.iSouthParkTVUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = iSouthParkTV;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3E6DF3FB286E260200959657 /* Build configuration list for PBXProject "iSouthParkTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E6DF425286E260300959657 /* Debug */,
+				3E6DF426286E260300959657 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E6DF427286E260300959657 /* Build configuration list for PBXNativeTarget "iSouthParkTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E6DF428286E260300959657 /* Debug */,
+				3E6DF429286E260300959657 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E6DF42A286E260300959657 /* Build configuration list for PBXNativeTarget "iSouthParkTVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E6DF42B286E260300959657 /* Debug */,
+				3E6DF42C286E260300959657 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E6DF42D286E260300959657 /* Build configuration list for PBXNativeTarget "iSouthParkTVUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E6DF42E286E260300959657 /* Debug */,
+				3E6DF42F286E260300959657 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3E6DF3F8286E260200959657 /* Project object */;
+}
