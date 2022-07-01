@@ -12,9 +12,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.HOMEVCID)
+        homeVC.tabBarItem.title = "Home"
+        
+        let searchVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.SEARCHVCID)
+        searchVC.tabBarItem.title = "Search"
+        
+        let settingsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.SETTINGSVCID)
+        settingsVC.tabBarItem.title = "Settings"
+        
+        let tabbarController = UITabBarController()
+        tabbarController.viewControllers = [homeVC, searchVC, settingsVC]
+        self.window?.rootViewController = tabbarController
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 

@@ -8,13 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		3E6DF404286E260200959657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DF403286E260200959657 /* AppDelegate.swift */; };
-		3E6DF406286E260200959657 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DF405286E260200959657 /* ViewController.swift */; };
 		3E6DF409286E260200959657 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6DF407286E260200959657 /* Main.storyboard */; };
 		3E6DF40B286E260300959657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E6DF40A286E260300959657 /* Assets.xcassets */; };
 		3E6DF40E286E260300959657 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6DF40C286E260300959657 /* LaunchScreen.storyboard */; };
 		3E6DF418286E260300959657 /* iSouthParkTVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DF417286E260300959657 /* iSouthParkTVTests.swift */; };
 		3E6DF422286E260300959657 /* iSouthParkTVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DF421286E260300959657 /* iSouthParkTVUITests.swift */; };
 		3E6DF424286E260300959657 /* iSouthParkTVUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DF423286E260300959657 /* iSouthParkTVUITestsLaunchTests.swift */; };
+		3E6DF434286E267D00959657 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DF433286E267D00959657 /* K.swift */; };
+		3E6DF436286E274E00959657 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DF435286E274E00959657 /* HomeViewController.swift */; };
+		3E6DF438286E275C00959657 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DF437286E275C00959657 /* SearchViewController.swift */; };
+		3E6DF43A286E276900959657 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DF439286E276900959657 /* SettingsViewController.swift */; };
+		3E6DF43C286E277500959657 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DF43B286E277500959657 /* DetailViewController.swift */; };
+		3E76BCE0286E2EA100EDB707 /* EpisodesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E76BCDE286E2EA100EDB707 /* EpisodesTableViewCell.swift */; };
+		3E76BCE1286E2EA100EDB707 /* EpisodesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E76BCDF286E2EA100EDB707 /* EpisodesTableViewCell.xib */; };
+		3E8D148B286F68C000ABDF78 /* southparkEpisodes.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3E8D148A286F68C000ABDF78 /* southparkEpisodes.xlsx */; };
+		3E9019D0286EC5EA0048D363 /* EpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9019CE286EC5EA0048D363 /* EpisodeCollectionViewCell.swift */; };
+		3E9019D1286EC5EA0048D363 /* EpisodeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E9019CF286EC5EA0048D363 /* EpisodeCollectionViewCell.xib */; };
+		3E9019D3286EC9220048D363 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9019D2286EC9220048D363 /* Extensions.swift */; };
+		3E9019D5286EC9760048D363 /* EpisodeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9019D4286EC9760048D363 /* EpisodeModels.swift */; };
+		3E9019D7286EC99D0048D363 /* SouthParkAPIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9019D6286EC99D0048D363 /* SouthParkAPIModels.swift */; };
+		3E9019DA286ECA620048D363 /* CoreXLSX in Frameworks */ = {isa = PBXBuildFile; productRef = 3E9019D9286ECA620048D363 /* CoreXLSX */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +50,6 @@
 /* Begin PBXFileReference section */
 		3E6DF400286E260200959657 /* iSouthParkTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSouthParkTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E6DF403286E260200959657 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3E6DF405286E260200959657 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3E6DF408286E260200959657 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3E6DF40A286E260300959657 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E6DF40D286E260300959657 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,6 +58,19 @@
 		3E6DF41D286E260300959657 /* iSouthParkTVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSouthParkTVUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E6DF421286E260300959657 /* iSouthParkTVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSouthParkTVUITests.swift; sourceTree = "<group>"; };
 		3E6DF423286E260300959657 /* iSouthParkTVUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSouthParkTVUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3E6DF433286E267D00959657 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		3E6DF435286E274E00959657 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3E6DF437286E275C00959657 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		3E6DF439286E276900959657 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3E6DF43B286E277500959657 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3E76BCDE286E2EA100EDB707 /* EpisodesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTableViewCell.swift; sourceTree = "<group>"; };
+		3E76BCDF286E2EA100EDB707 /* EpisodesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodesTableViewCell.xib; sourceTree = "<group>"; };
+		3E8D148A286F68C000ABDF78 /* southparkEpisodes.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = southparkEpisodes.xlsx; sourceTree = "<group>"; };
+		3E9019CE286EC5EA0048D363 /* EpisodeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewCell.swift; sourceTree = "<group>"; };
+		3E9019CF286EC5EA0048D363 /* EpisodeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCollectionViewCell.xib; sourceTree = "<group>"; };
+		3E9019D2286EC9220048D363 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		3E9019D4286EC9760048D363 /* EpisodeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeModels.swift; sourceTree = "<group>"; };
+		3E9019D6286EC99D0048D363 /* SouthParkAPIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SouthParkAPIModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E9019DA286ECA620048D363 /* CoreXLSX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +102,7 @@
 		3E6DF3F7286E260200959657 = {
 			isa = PBXGroup;
 			children = (
+				3E8D148A286F68C000ABDF78 /* southparkEpisodes.xlsx */,
 				3E6DF402286E260200959657 /* iSouthParkTV */,
 				3E6DF416286E260300959657 /* iSouthParkTVTests */,
 				3E6DF420286E260300959657 /* iSouthParkTVUITests */,
@@ -97,10 +124,17 @@
 			isa = PBXGroup;
 			children = (
 				3E6DF403286E260200959657 /* AppDelegate.swift */,
-				3E6DF405286E260200959657 /* ViewController.swift */,
+				3E6DF433286E267D00959657 /* K.swift */,
 				3E6DF407286E260200959657 /* Main.storyboard */,
+				3E6DF430286E265C00959657 /* Model */,
+				3E76BCDD286E2E7D00EDB707 /* View */,
+				3E6DF43D286E2A8600959657 /* Home */,
+				3E6DF43E286E2A8D00959657 /* Search */,
+				3E6DF43F286E2A9C00959657 /* Settings */,
+				3E6DF440286E2AA300959657 /* Detail */,
 				3E6DF40A286E260300959657 /* Assets.xcassets */,
 				3E6DF40C286E260300959657 /* LaunchScreen.storyboard */,
+				3E9019D2286EC9220048D363 /* Extensions.swift */,
 			);
 			path = iSouthParkTV;
 			sourceTree = "<group>";
@@ -122,6 +156,58 @@
 			path = iSouthParkTVUITests;
 			sourceTree = "<group>";
 		};
+		3E6DF430286E265C00959657 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3E9019D4286EC9760048D363 /* EpisodeModels.swift */,
+				3E9019D6286EC99D0048D363 /* SouthParkAPIModels.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3E6DF43D286E2A8600959657 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3E6DF435286E274E00959657 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3E6DF43E286E2A8D00959657 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				3E6DF437286E275C00959657 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		3E6DF43F286E2A9C00959657 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3E6DF439286E276900959657 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		3E6DF440286E2AA300959657 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				3E6DF43B286E277500959657 /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		3E76BCDD286E2E7D00EDB707 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E76BCDE286E2EA100EDB707 /* EpisodesTableViewCell.swift */,
+				3E76BCDF286E2EA100EDB707 /* EpisodesTableViewCell.xib */,
+				3E9019CE286EC5EA0048D363 /* EpisodeCollectionViewCell.swift */,
+				3E9019CF286EC5EA0048D363 /* EpisodeCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +224,9 @@
 			dependencies = (
 			);
 			name = iSouthParkTV;
+			packageProductDependencies = (
+				3E9019D9286ECA620048D363 /* CoreXLSX */,
+			);
 			productName = iSouthParkTV;
 			productReference = 3E6DF400286E260200959657 /* iSouthParkTV.app */;
 			productType = "com.apple.product-type.application";
@@ -210,6 +299,9 @@
 				Base,
 			);
 			mainGroup = 3E6DF3F7286E260200959657;
+			packageReferences = (
+				3E9019D8286ECA620048D363 /* XCRemoteSwiftPackageReference "CoreXLSX" */,
+			);
 			productRefGroup = 3E6DF401286E260200959657 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -227,7 +319,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E6DF40E286E260300959657 /* LaunchScreen.storyboard in Resources */,
+				3E9019D1286EC5EA0048D363 /* EpisodeCollectionViewCell.xib in Resources */,
+				3E76BCE1286E2EA100EDB707 /* EpisodesTableViewCell.xib in Resources */,
 				3E6DF40B286E260300959657 /* Assets.xcassets in Resources */,
+				3E8D148B286F68C000ABDF78 /* southparkEpisodes.xlsx in Resources */,
 				3E6DF409286E260200959657 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,8 +348,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E6DF406286E260200959657 /* ViewController.swift in Sources */,
+				3E9019D7286EC99D0048D363 /* SouthParkAPIModels.swift in Sources */,
+				3E76BCE0286E2EA100EDB707 /* EpisodesTableViewCell.swift in Sources */,
+				3E9019D3286EC9220048D363 /* Extensions.swift in Sources */,
+				3E6DF434286E267D00959657 /* K.swift in Sources */,
+				3E9019D0286EC5EA0048D363 /* EpisodeCollectionViewCell.swift in Sources */,
 				3E6DF404286E260200959657 /* AppDelegate.swift in Sources */,
+				3E9019D5286EC9760048D363 /* EpisodeModels.swift in Sources */,
+				3E6DF438286E275C00959657 /* SearchViewController.swift in Sources */,
+				3E6DF43A286E276900959657 /* SettingsViewController.swift in Sources */,
+				3E6DF436286E274E00959657 /* HomeViewController.swift in Sources */,
+				3E6DF43C286E277500959657 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +694,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3E9019D8286ECA620048D363 /* XCRemoteSwiftPackageReference "CoreXLSX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CoreOffice/CoreXLSX.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3E9019D9286ECA620048D363 /* CoreXLSX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E9019D8286ECA620048D363 /* XCRemoteSwiftPackageReference "CoreXLSX" */;
+			productName = CoreXLSX;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3E6DF3F8286E260200959657 /* Project object */;
 }
