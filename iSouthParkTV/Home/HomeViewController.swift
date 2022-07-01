@@ -17,13 +17,13 @@ enum CellType: Int, CaseIterable {
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var homeTableView: UITableView!
-    private var episodeArray: [Episodes] = []
+    private var episodeArray: [ExcelEpisode] = []
     private var excelHeaders: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        homeTableView.register(UINib(nibName: K.EPISODES_TABLE_VIEW_CELL_NIB, bundle: nil), forCellReuseIdentifier: K.EPISODES_TABLE_VIEW_CELL_REUSE_ID)
+        homeTableView.register(UINib(nibName: K.EPISODES_TABLE_VIEW_CELL, bundle: nil), forCellReuseIdentifier: K.EPISODES_TABLE_VIEW_CELL)
         homeTableView.estimatedRowHeight = 300
         homeTableView.rowHeight = UITableView.automaticDimension
         homeTableView.reloadData()
@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
                 }
                 let worksheet = try! file.parseWorksheet(at: path)
                 let sharedString = try! file.parseSharedStrings()
-                var episode: Episodes? = nil
+                var episode: ExcelEpisode? = nil
                 var id = 0
                 var name = "name"
                 var seasonNr = 0
@@ -112,7 +112,7 @@ class HomeViewController: UIViewController {
                             }
                             
                         }
-                        episode = Episodes(id: id, name: name, season: seasonNr, episode: episodeNr, air_date: air_date, wiki_url: wiki_url, thumbnail_url: thumbnail_url, description: description, created_at: created_at, updated_at: updated_at, characters: characters, locations: locations)
+                        episode = ExcelEpisode(id: id, name: name, season: seasonNr, episode: episodeNr, air_date: air_date, wiki_url: wiki_url, thumbnail_url: thumbnail_url, description: description, created_at: created_at, updated_at: updated_at, characters: characters, locations: locations)
                         episodeArray.append(episode!)
                     }
                 }
@@ -127,7 +127,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: EpisodesTableViewCell = tableView.dequeueReusableCell(withIdentifier: K.EPISODES_TABLE_VIEW_CELL_REUSE_ID, for: indexPath) as! EpisodesTableViewCell
+        let cell: EpisodesTableViewCell = tableView.dequeueReusableCell(withIdentifier: K.EPISODES_TABLE_VIEW_CELL, for: indexPath) as! EpisodesTableViewCell
         cell.delegate = self
         cell.titleLabel.text = "Season \(indexPath.row + 1)"
         cell.episodesForThisSeason = episodeArray.filter({ episode in
@@ -142,10 +142,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
 extension HomeViewController: EpisodesTableViewCellDelegate {
-    func didSelectItem(episode: Episodes) {
-//        if let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: K.) as? DetailViewController {
-//            detailVC.episode = episode
-//            self.present(detailVC, animated: true, completion: nil)
-//        }
+    func didSelectItem(episode: ExcelEpisode) {
+        if let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: K.DETAILVCID) as? DetailViewController {
+            detailVC.episode = episode
+            self.present(detailVC, animated: true, completion: nil)
+        }
     }
 }

@@ -13,7 +13,7 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
     
     var cellType: CellType = .episodes
     
-    var episode: Episodes? {
+    var episode: ExcelEpisode? {
         didSet {
             if episode != nil {
                 let lazyImage = LazyLoadingImage()
@@ -37,5 +37,16 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
         thumbnailImageView.clipsToBounds = true
         thumbnailImageView.layer.borderWidth = 10
         thumbnailImageView.layer.borderColor = UIColor.clear.cgColor
+    }
+    
+    override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        coordinator.addCoordinatedAnimations({ [weak self] in
+            if self?.isFocused ?? false{
+                self?.thumbnailImageView.layer.borderColor = UIColor.white.cgColor
+            } else {
+                self?.thumbnailImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
+                self?.thumbnailImageView.layer.borderColor = UIColor.clear.cgColor
+            }
+        }, completion: nil)
     }
 }

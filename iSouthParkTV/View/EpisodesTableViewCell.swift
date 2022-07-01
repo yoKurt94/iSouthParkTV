@@ -8,7 +8,7 @@
 import UIKit
 
 protocol EpisodesTableViewCellDelegate: AnyObject {
-    func didSelectItem(episode: Episodes)
+    func didSelectItem(episode: ExcelEpisode)
 }
 
 class EpisodesTableViewCell: UITableViewCell {
@@ -17,7 +17,7 @@ class EpisodesTableViewCell: UITableViewCell {
     @IBOutlet weak var videoCollectionView: UICollectionView!
     @IBOutlet weak var videoCollectionViewHeightConstraint: NSLayoutConstraint!
     
-    var episodesForThisSeason: [Episodes]?
+    var episodesForThisSeason: [ExcelEpisode]?
     weak var delegate: EpisodesTableViewCellDelegate?
     
     override func awakeFromNib() {
@@ -30,7 +30,7 @@ class EpisodesTableViewCell: UITableViewCell {
     }
     
     func registerCollectionViewCells() {
-        videoCollectionView.register(UINib(nibName: K.EPISODE_COLLECTION_VIEW_CELL_NIB, bundle: nil), forCellWithReuseIdentifier: K.EPISODE_COLLECTION_VIEW_CELL_REUSE_ID)
+        videoCollectionView.register(UINib(nibName: K.EPISODE_COLLECTION_VIEW_CELL, bundle: nil), forCellWithReuseIdentifier: K.EPISODE_COLLECTION_VIEW_CELL)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -46,7 +46,7 @@ extension EpisodesTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.EPISODE_COLLECTION_VIEW_CELL_REUSE_ID, for: indexPath) as! EpisodeCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.EPISODE_COLLECTION_VIEW_CELL, for: indexPath) as! EpisodeCollectionViewCell
         cell.thumbnailImageView.image = UIImage(named: "appleSignIn")
         cell.thumbnailImageView.contentMode = .scaleAspectFill
         cell.episode = episodesForThisSeason![indexPath.item]

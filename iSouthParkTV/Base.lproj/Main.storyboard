@@ -10,7 +10,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="HomeVCID" id="BYZ-38-t0r" customClass="HomeViewController" customModule="iSouthParkTV" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVCID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="HomeViewController" customModule="iSouthParkTV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -43,7 +43,7 @@
         <!--Search View Controller-->
         <scene sceneID="CmB-QR-ck4">
             <objects>
-                <viewController storyboardIdentifier="SearchVCID" id="2OX-de-Hbn" customClass="SearchViewController" customModule="iSouthParkTV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchVCID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2OX-de-Hbn" customClass="SearchViewController" customModule="iSouthParkTV" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r8Y-Ww-HZF"/>
                         <viewControllerLayoutGuide type="bottom" id="NUI-4c-Frr"/>
@@ -58,10 +58,147 @@
             </objects>
             <point key="canvasLocation" x="2041" y="-5"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="CQd-fk-wsA">
+            <objects>
+                <viewController storyboardIdentifier="DetailVCID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6o5-b8-x2k" customClass="DetailViewController" customModule="iSouthParkTV" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wix-lb-yAR"/>
+                        <viewControllerLayoutGuide type="bottom" id="xTt-ZY-KML"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lzG-qi-ep6">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_1" translatesAutoresizingMaskIntoConstraints="NO" id="jwW-7N-WMp">
+                                <rect key="frame" x="0.0" y="20" width="1920" height="1060"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyQ-UX-qr1">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DBw-lh-guG">
+                                    <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FbE-jq-IWH" userLabel="ContainerView">
+                                            <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSK-GH-7mS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="1920" height="648"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="South_Park_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Lxx-al-o06">
+                                                            <rect key="frame" x="1074" y="68" width="758" height="426.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="758" id="12n-I2-mlE"/>
+                                                                <constraint firstAttribute="width" secondItem="Lxx-al-o06" secondAttribute="height" multiplier="16:9" id="orp-9p-pnK"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zI3-6l-IlZ">
+                                                            <rect key="frame" x="88" y="68" width="330" height="69"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="69" id="56g-Xu-RTt"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="1Qb-R1-6Me">
+                                                            <rect key="frame" x="88" y="408.5" width="800" height="86"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tx-gN-SOn">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="376" height="86"/>
+                                                                    <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                                                    <state key="normal" title="Button"/>
+                                                                    <buttonConfiguration key="configuration" style="gray" title="Play"/>
+                                                                    <connections>
+                                                                        <action selector="didClickOnPlayButton:" destination="6o5-b8-x2k" eventType="primaryActionTriggered" id="LgY-kT-grS"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dds-08-mtR">
+                                                                    <rect key="frame" x="424" y="0.0" width="376" height="86"/>
+                                                                    <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                                                    <state key="normal" title="Button"/>
+                                                                    <buttonConfiguration key="configuration" style="gray" title="Add to favorites"/>
+                                                                </button>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="800" id="aLa-Yz-CEh"/>
+                                                                <constraint firstAttribute="height" constant="86" id="lcA-Qd-ZeM"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WaL-C0-N06">
+                                                            <rect key="frame" x="88" y="145" width="800" height="333"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="1Qb-R1-6Me" firstAttribute="leading" secondItem="hSK-GH-7mS" secondAttribute="leading" constant="88" id="5vW-ye-Grv"/>
+                                                        <constraint firstItem="WaL-C0-N06" firstAttribute="top" secondItem="zI3-6l-IlZ" secondAttribute="bottom" constant="8" id="EC0-4X-RjV"/>
+                                                        <constraint firstItem="Lxx-al-o06" firstAttribute="top" secondItem="zI3-6l-IlZ" secondAttribute="top" id="W97-GR-AkZ"/>
+                                                        <constraint firstItem="1Qb-R1-6Me" firstAttribute="top" secondItem="WaL-C0-N06" secondAttribute="bottom" constant="8" id="YrK-Bd-Q6q"/>
+                                                        <constraint firstItem="Lxx-al-o06" firstAttribute="top" secondItem="hSK-GH-7mS" secondAttribute="topMargin" id="c6p-r4-StR"/>
+                                                        <constraint firstItem="WaL-C0-N06" firstAttribute="leading" secondItem="hSK-GH-7mS" secondAttribute="leading" constant="88" id="c8E-eH-hCv"/>
+                                                        <constraint firstItem="Lxx-al-o06" firstAttribute="bottom" secondItem="1Qb-R1-6Me" secondAttribute="bottom" id="e1f-LG-biD"/>
+                                                        <constraint firstItem="Lxx-al-o06" firstAttribute="trailing" secondItem="hSK-GH-7mS" secondAttribute="trailingMargin" id="mwh-15-Te9"/>
+                                                        <constraint firstItem="zI3-6l-IlZ" firstAttribute="leading" secondItem="WaL-C0-N06" secondAttribute="leading" id="wWJ-qM-h9o"/>
+                                                    </constraints>
+                                                </view>
+                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="XeB-Gl-oHR">
+                                                    <rect key="frame" x="88" y="688" width="1744" height="344"/>
+                                                </tableView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="hSK-GH-7mS" firstAttribute="leading" secondItem="FbE-jq-IWH" secondAttribute="leading" id="2G5-Lz-s2E"/>
+                                                <constraint firstAttribute="trailing" secondItem="hSK-GH-7mS" secondAttribute="trailing" id="9dD-iT-JgM"/>
+                                                <constraint firstItem="hSK-GH-7mS" firstAttribute="top" secondItem="FbE-jq-IWH" secondAttribute="top" id="PVj-of-wb1"/>
+                                                <constraint firstAttribute="trailing" secondItem="XeB-Gl-oHR" secondAttribute="trailing" constant="88" id="XdB-YL-0nN"/>
+                                                <constraint firstItem="hSK-GH-7mS" firstAttribute="height" secondItem="FbE-jq-IWH" secondAttribute="height" multiplier="0.6" id="Y4A-mV-Gsd"/>
+                                                <constraint firstItem="XeB-Gl-oHR" firstAttribute="top" secondItem="hSK-GH-7mS" secondAttribute="bottom" constant="40" id="kLz-GH-tX1"/>
+                                                <constraint firstAttribute="bottom" secondItem="XeB-Gl-oHR" secondAttribute="bottom" constant="48" id="lUk-5a-SWo"/>
+                                                <constraint firstItem="XeB-Gl-oHR" firstAttribute="leading" secondItem="FbE-jq-IWH" secondAttribute="leading" constant="88" id="mRj-Ah-4k8"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="FbE-jq-IWH" secondAttribute="bottom" id="DuW-iY-aCm"/>
+                                        <constraint firstItem="FbE-jq-IWH" firstAttribute="leading" secondItem="DBw-lh-guG" secondAttribute="leading" id="Oni-yA-uYf"/>
+                                        <constraint firstAttribute="trailing" secondItem="FbE-jq-IWH" secondAttribute="trailing" id="laF-fm-vha"/>
+                                        <constraint firstItem="FbE-jq-IWH" firstAttribute="top" secondItem="DBw-lh-guG" secondAttribute="top" id="ve2-lZ-DR2"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xDa-Za-TNA"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="jwW-7N-WMp" secondAttribute="bottom" id="EVD-9s-UV7"/>
+                            <constraint firstAttribute="trailing" secondItem="oyQ-UX-qr1" secondAttribute="trailing" id="L6W-Lc-Psk"/>
+                            <constraint firstAttribute="bottom" secondItem="oyQ-UX-qr1" secondAttribute="bottom" id="Oii-Ho-25C"/>
+                            <constraint firstItem="jwW-7N-WMp" firstAttribute="top" secondItem="lzG-qi-ep6" secondAttribute="top" constant="20" symbolic="YES" id="SLg-cD-cNG"/>
+                            <constraint firstItem="oyQ-UX-qr1" firstAttribute="leading" secondItem="lzG-qi-ep6" secondAttribute="leading" id="ZKg-ed-tbe"/>
+                            <constraint firstItem="oyQ-UX-qr1" firstAttribute="top" secondItem="lzG-qi-ep6" secondAttribute="top" id="aYN-tf-2g4"/>
+                            <constraint firstAttribute="trailing" secondItem="jwW-7N-WMp" secondAttribute="trailing" id="flR-UU-n0f"/>
+                            <constraint firstItem="jwW-7N-WMp" firstAttribute="leading" secondItem="lzG-qi-ep6" secondAttribute="leading" id="wHP-h0-SGe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="WaL-C0-N06" id="IMm-10-mFS"/>
+                        <outlet property="episodeThumbnail" destination="Lxx-al-o06" id="jkN-DV-lgJ"/>
+                        <outlet property="similarTableView" destination="XeB-Gl-oHR" id="5YJ-3F-QQj"/>
+                        <outlet property="titleLabel" destination="zI3-6l-IlZ" id="Bv4-6V-pNv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oXg-b9-MFl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2041" y="1620"/>
+        </scene>
         <!--Settings View Controller-->
         <scene sceneID="CYn-GR-27O">
             <objects>
-                <viewController storyboardIdentifier="SettingsVCID" id="gKI-5Q-MrW" customClass="SettingsViewController" customModule="iSouthParkTV" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsVCID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gKI-5Q-MrW" customClass="SettingsViewController" customModule="iSouthParkTV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K31-74-ecO"/>
                         <viewControllerLayoutGuide type="bottom" id="bkU-RU-70r"/>
@@ -77,4 +214,8 @@
             <point key="canvasLocation" x="4053" y="-5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="South_Park_Logo" width="800" height="123"/>
+        <image name="background_1" width="2000" height="1125"/>
+    </resources>
 </document>
