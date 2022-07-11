@@ -14,16 +14,19 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var episodeThumbnail: UIImageView!
     @IBOutlet weak var similarTableView: UITableView!
+    @IBOutlet weak var playButton: UIButton!
     var episode: ExcelEpisode? = nil
     var selectedLanguage = "GE"
     fileprivate var videos: [String] = []
     fileprivate var urls: [URL] = []
     fileprivate var currentVideo: Int = 0
     fileprivate let playerController = AVPlayerViewController()
+    var avAssets: [AVAsset] = []
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        playerController.delegate = self
         setupTableView()
         descriptionLabel.text = episode!.description
         titleLabel.text = episode!.name
@@ -41,8 +44,13 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func didClickOnPlayButton(_ sender: UIButton) {
+        playButton.setTitle("", for: .normal)
+        let spinner = UIActivityIndicatorView(frame: playButton.bounds)
+        spinner.style = .medium
+        spinner.startAnimating()
+        spinner.color = UIColor.gray
+        playButton.addSubview(spinner)
         
-        var avAssets: [AVAsset] = []
         NotificationCenter.default.post(name: Notification.Name("startedFetching"), object: nil)
         Services().requestVideoLinks(episodeId: String(episode!.id), lang: "ge") { [weak self] result in
             guard let strongSelf = self else {
@@ -55,13 +63,15 @@ class DetailViewController: UIViewController {
                         print("There is something wrong with the URL")
                         return
                     }
-                    avAssets.append(AVAsset(url: url))
+                    strongSelf.avAssets.append(AVAsset(url: url))
                     strongSelf.urls.append(url)
                 }
             case .failure(let error):
                 print(error)
             }
             DispatchQueue.main.async {
+                spinner.removeFromSuperview()
+                strongSelf.playButton.setTitle("Play", for: .normal)
                 strongSelf.present(strongSelf.playerController, animated: true)
                 strongSelf.startPlaying(url: strongSelf.urls[0])
             }
@@ -80,12 +90,7 @@ class DetailViewController: UIViewController {
         playerController.player = player
         playerController.player?.currentItem?.externalMetadata = makeExternalMetadata()
         player.play()
-        NotificationCenter.default
-            .addObserver(self,
-            selector: #selector(playerDidFinishPlaying),
-            name: .AVPlayerItemDidPlayToEndTime,
-            object: player.currentItem
-        )
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: player.currentItem)
     }
     
     @objc func playerDidFinishPlaying(note: NSNotification) {
@@ -129,6 +134,30 @@ class DetailViewController: UIViewController {
         item.value = value as? NSCopying & NSObjectProtocol
         item.extendedLanguageTag = "und"
         return item.copy() as! AVMetadataItem
+    }
+}
+
+extension DetailViewController: AVPlayerViewControllerDelegate {
+    func playerViewControllerWillBeginDismissalTransition(_ playerViewController: AVPlayerViewController) {
+        var totalTime: Double = 0.0
+        var currentTime: Double = 0.0
+        for asset in avAssets {
+            totalTime += asset.duration.seconds
+            print(totalTime)
+        }
+        guard let currentAsset = playerViewController.player?.currentItem?.asset else {
+            return
+        }
+        for asset in avAssets {
+            if asset.duration != currentAsset.duration {
+                currentTime += asset.duration.seconds
+            } else {
+                currentTime += playerViewController.player?.currentTime().seconds ?? 0.0
+                break
+            }
+        }
+        
+        UserDefaults.standard.set(Float(currentTime / totalTime), forKey: String(episode!.id))
     }
 }
 

@@ -54,7 +54,7 @@ extension EpisodesTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (16/9) * collectionView.frame.size.height, height: collectionView.frame.size.height)
+        return CGSize(width: collectionView.frame.size.height, height: collectionView.frame.size.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

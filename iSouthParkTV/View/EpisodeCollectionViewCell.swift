@@ -10,11 +10,20 @@ import UIKit
 class EpisodeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var thumbnailImageView: UIImageView!
+    @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     var cellType: CellType = .episodes
     
     var episode: ExcelEpisode? {
         didSet {
+            let progress = UserDefaults.standard.float(forKey: String(episode!.id))
+            if progress == 0 {
+                progressBar.isHidden = true
+            } else {
+                progressBar.progress = progress
+            }
+            titleLabel.text = episode!.name
             if episode != nil {
                 let lazyImage = LazyLoadingImage()
                 lazyImage.loadImageUsingURLString(urlString: episode!.thumbnail_url) { [weak self] image in
@@ -26,7 +35,6 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
                     }
                 }
                 thumbnailImageView.image = lazyImage.image
-                
             }
         }
     }

@@ -133,6 +133,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.episodesForThisSeason = episodeArray.filter({ episode in
             episode.season == indexPath.row + 1
         })
+        cell.videoCollectionView.reloadData()
         return cell
     }
     
