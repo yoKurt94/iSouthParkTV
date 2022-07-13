@@ -29,8 +29,12 @@ class LazyLoadingImage: UIImageView {
             if error != nil {
                 print(error?.localizedDescription)
             }
+            guard let data = data else {
+                return
+            }
+
             DispatchQueue.main.async {
-                let imageToCache = UIImage(data: data!)
+                let imageToCache = UIImage(data: data)
                 if self.imageURLString == urlString {
                     completion(imageToCache!)
                 }

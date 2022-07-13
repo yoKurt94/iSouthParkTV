@@ -47,9 +47,17 @@ extension EpisodesTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.EPISODE_COLLECTION_VIEW_CELL, for: indexPath) as! EpisodeCollectionViewCell
+        let episode = episodesForThisSeason![indexPath.item]
         cell.thumbnailImageView.image = UIImage(named: "appleSignIn")
         cell.thumbnailImageView.contentMode = .scaleAspectFill
-        cell.episode = episodesForThisSeason![indexPath.item]
+        cell.episode = episode
+        let prg = UserDefaults.standard.float(forKey: String(episode.id))
+        if prg == 0 {
+            cell.progressBar.isHidden = true
+        } else {
+            cell.progressBar.isHidden = false
+            cell.progressBar.progress = prg
+        }
         return cell
     }
     
