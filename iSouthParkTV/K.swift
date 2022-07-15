@@ -20,4 +20,7 @@ struct K {
     
     //MARK: TableViews
     public static let EPISODES_TABLE_VIEW_CELL = "EpisodesTableViewCell"
+    
+    //MARK: NotificationCenter
+    public static let UPDATE_PROGRESSBARS = "updateProgressbar"
 }

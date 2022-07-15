@@ -30,6 +30,11 @@ class HomeViewController: UIViewController {
         homeTableView.dataSource = self
         homeTableView.delegate = self
         getDataFromExcelFile()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateProgressBar), name: NSNotification.Name(K.UPDATE_PROGRESSBARS), object: nil)
+    }
+    
+    @objc func updateProgressBar(){
+        homeTableView.reloadData()
     }
     
     func getDataFromExcelFile(){

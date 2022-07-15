@@ -12,9 +12,9 @@
 // Fixme: title in DetailVC has broken trailing
 // Fixme: reduce redundant code (i.e. the episode network call)
 // Fixme: add German titles and descriptions
-// Fixme: notify HomeVC to update the progress bar when player was manually stopped
 // Fixme: if the user interacts with the player while the automatic next episode label appears, stop the process
 // Fixme: add animation to automatic next episode label
+// Fixme: stop automatic next episode when the player is dismissed
 
 
 import UIKit
@@ -110,6 +110,7 @@ class DetailViewController: UIViewController {
                 strongSelf.playButton.setTitle("Play", for: .normal)
                 strongSelf.present(strongSelf.playerController, animated: true)
                 strongSelf.startPlaying(url: strongSelf.urls[0])
+                // Fixme: if there is no internet connection, this will fail with an index out of bounds
             }
         }
     }
@@ -129,7 +130,7 @@ class DetailViewController: UIViewController {
         label.tintColor = UIColor.white
         playerController.view.addSubview(label)
         
-        var secondsRemaining = 10
+        var secondsRemaining = 7
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (Timer) in
             if secondsRemaining > 0 {
                 label.text = "Next episode in \(secondsRemaining)"
@@ -164,7 +165,6 @@ class DetailViewController: UIViewController {
                         label.removeFromSuperview()
                         strongSelf.nextEpisodeLabelVisible = false
                         strongSelf.startPlaying(url: strongSelf.urls[0])
-                        strongSelf.showNextVideo()
                     }
                 }
             }
@@ -218,7 +218,7 @@ class DetailViewController: UIViewController {
         metadata.append(descItem)
         
         // Build genre item
-        let genreItem = makeMetadataItem(.quickTimeMetadataGenre, value: "Education")
+        let genreItem = makeMetadataItem(.quickTimeMetadataGenre, value: "Entertainment")
         metadata.append(genreItem)
         return metadata
     }
@@ -251,7 +251,7 @@ extension DetailViewController: AVPlayerViewControllerDelegate {
                 break
             }
         }
-        
+        NotificationCenter.default.post(name: NSNotification.Name(K.UPDATE_PROGRESSBARS), object: Float(currentTime / totalTime))
         UserDefaults.standard.set(Float(currentTime / totalTime), forKey: String(episode!.id))
     }
 }

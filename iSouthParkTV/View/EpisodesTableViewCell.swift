@@ -53,9 +53,11 @@ extension EpisodesTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         cell.thumbnailImageView.contentMode = .scaleAspectFill
         cell.episode = episode
         let prg = UserDefaults.standard.float(forKey: String(episode.id))
-        if prg == 0 {
+        if prg == 0 || prg > Float(0.85) {
             cell.progressBar.isHidden = true
-        } else {
+        }
+
+        else {
             cell.progressBar.isHidden = false
             cell.progressBar.progress = prg
         }
