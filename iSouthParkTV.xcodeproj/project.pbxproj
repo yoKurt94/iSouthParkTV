@@ -23,7 +23,6 @@
 		3E76BCE1286E2EA100EDB707 /* EpisodesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E76BCDF286E2EA100EDB707 /* EpisodesTableViewCell.xib */; };
 		3E8D148B286F68C000ABDF78 /* southparkEpisodes.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3E8D148A286F68C000ABDF78 /* southparkEpisodes.xlsx */; };
 		3E8D148D286F7FE000ABDF78 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D148C286F7FE000ABDF78 /* Services.swift */; };
-		3E8D1490286F8B4800ABDF78 /* VideoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D148F286F8B4800ABDF78 /* VideoEditor.swift */; };
 		3E9019D0286EC5EA0048D363 /* EpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9019CE286EC5EA0048D363 /* EpisodeCollectionViewCell.swift */; };
 		3E9019D1286EC5EA0048D363 /* EpisodeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E9019CF286EC5EA0048D363 /* EpisodeCollectionViewCell.xib */; };
 		3E9019D3286EC9220048D363 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9019D2286EC9220048D363 /* Extensions.swift */; };
@@ -70,7 +69,6 @@
 		3E8D148A286F68C000ABDF78 /* southparkEpisodes.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = southparkEpisodes.xlsx; sourceTree = "<group>"; };
 		3E8D148C286F7FE000ABDF78 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		3E8D148E286F89EC00ABDF78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		3E8D148F286F8B4800ABDF78 /* VideoEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEditor.swift; sourceTree = "<group>"; };
 		3E9019CE286EC5EA0048D363 /* EpisodeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewCell.swift; sourceTree = "<group>"; };
 		3E9019CF286EC5EA0048D363 /* EpisodeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCollectionViewCell.xib; sourceTree = "<group>"; };
 		3E9019D2286EC9220048D363 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 				3E6DF40A286E260300959657 /* Assets.xcassets */,
 				3E6DF40C286E260300959657 /* LaunchScreen.storyboard */,
 				3E9019D2286EC9220048D363 /* Extensions.swift */,
-				3E8D148F286F8B4800ABDF78 /* VideoEditor.swift */,
 			);
 			path = iSouthParkTV;
 			sourceTree = "<group>";
@@ -360,7 +357,6 @@
 				3E8D148D286F7FE000ABDF78 /* Services.swift in Sources */,
 				3E76BCE0286E2EA100EDB707 /* EpisodesTableViewCell.swift in Sources */,
 				3E9019D3286EC9220048D363 /* Extensions.swift in Sources */,
-				3E8D1490286F8B4800ABDF78 /* VideoEditor.swift in Sources */,
 				3E6DF434286E267D00959657 /* K.swift in Sources */,
 				3E9019D0286EC5EA0048D363 /* EpisodeCollectionViewCell.swift in Sources */,
 				3E6DF404286E260200959657 /* AppDelegate.swift in Sources */,

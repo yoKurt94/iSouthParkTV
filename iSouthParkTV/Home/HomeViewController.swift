@@ -130,6 +130,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell: EpisodesTableViewCell = tableView.dequeueReusableCell(withIdentifier: K.EPISODES_TABLE_VIEW_CELL, for: indexPath) as! EpisodesTableViewCell
         cell.delegate = self
         cell.titleLabel.text = "Season \(indexPath.row + 1)"
+        cell.allEpisodes = episodeArray
         cell.episodesForThisSeason = episodeArray.filter({ episode in
             episode.season == indexPath.row + 1
         })
@@ -143,9 +144,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
 extension HomeViewController: EpisodesTableViewCellDelegate {
-    func didSelectItem(episode: ExcelEpisode) {
+    func didSelectItem(episode: ExcelEpisode, allEpisodes: [ExcelEpisode]) {
         if let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: K.DETAILVCID) as? DetailViewController {
             detailVC.episode = episode
+            detailVC.allEpisodes = allEpisodes
             self.present(detailVC, animated: true, completion: nil)
         }
     }

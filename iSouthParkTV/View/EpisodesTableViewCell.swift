@@ -8,7 +8,7 @@
 import UIKit
 
 protocol EpisodesTableViewCellDelegate: AnyObject {
-    func didSelectItem(episode: ExcelEpisode)
+    func didSelectItem(episode: ExcelEpisode, allEpisodes: [ExcelEpisode])
 }
 
 class EpisodesTableViewCell: UITableViewCell {
@@ -17,6 +17,7 @@ class EpisodesTableViewCell: UITableViewCell {
     @IBOutlet weak var videoCollectionView: UICollectionView!
     @IBOutlet weak var videoCollectionViewHeightConstraint: NSLayoutConstraint!
     
+    var allEpisodes: [ExcelEpisode]?
     var episodesForThisSeason: [ExcelEpisode]?
     weak var delegate: EpisodesTableViewCellDelegate?
     
@@ -66,7 +67,10 @@ extension EpisodesTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.didSelectItem(episode: episodesForThisSeason![indexPath.item])
+        guard let allEpisodes = allEpisodes else {
+            return
+        }
+        delegate?.didSelectItem(episode: episodesForThisSeason![indexPath.item], allEpisodes: allEpisodes)
     }
     
     

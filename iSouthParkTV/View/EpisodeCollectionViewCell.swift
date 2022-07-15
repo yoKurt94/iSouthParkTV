@@ -13,7 +13,7 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var titleLabel: UILabel!
     var cellType: CellType = .episodes
-    
+        
     var episode: ExcelEpisode? {
         didSet {
             titleLabel.text = episode!.name
