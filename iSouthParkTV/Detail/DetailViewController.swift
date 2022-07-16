@@ -40,6 +40,7 @@ class DetailViewController: UIViewController {
     var avAssets: [AVAsset] = []
     var currentEpisodeID: Int?
     fileprivate var nextEpisodeLabelVisible = false
+    fileprivate var userHasInteractedWithTimeLine = false
 
     
     override func viewDidLoad() {
@@ -60,6 +61,11 @@ class DetailViewController: UIViewController {
         }
         episodeThumbnail.image = lazyImage.image
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        userHasInteractedWithTimeLine = false
     }
     
     func addPeriodicTimeObserver() {
@@ -116,7 +122,7 @@ class DetailViewController: UIViewController {
     }
     
     func showNextVideo() {
-        if nextEpisodeLabelVisible {
+        if nextEpisodeLabelVisible || userHasInteractedWithTimeLine {
             return
         }
         guard var currentEpisodeID = currentEpisodeID else {
@@ -131,11 +137,22 @@ class DetailViewController: UIViewController {
         playerController.view.addSubview(label)
         
         var secondsRemaining = 7
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (Timer) in
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] (Timer) in
+            guard let strongSelf = self else {
+                return
+            }
             if secondsRemaining > 0 {
+                if strongSelf.userHasInteractedWithTimeLine == true {
+                    Timer.invalidate()
+                    label.removeFromSuperview()
+                    return
+                }
                 label.text = "Next episode in \(secondsRemaining)"
                 secondsRemaining -= 1
             } else {
+                if strongSelf.playerController.viewIfLoaded?.window == nil {
+                    return
+                }
                 Timer.invalidate()
                 label.text = "Loading next episode..."
                 NotificationCenter.default.post(name: Notification.Name("startedFetching"), object: nil)
@@ -254,6 +271,13 @@ extension DetailViewController: AVPlayerViewControllerDelegate {
         NotificationCenter.default.post(name: NSNotification.Name(K.UPDATE_PROGRESSBARS), object: Float(currentTime / totalTime))
         UserDefaults.standard.set(Float(currentTime / totalTime), forKey: String(episode!.id))
     }
+    
+    func playerViewController(_ playerViewController: AVPlayerViewController, willResumePlaybackAfterUserNavigatedFrom oldTime: CMTime, to targetTime: CMTime) {
+        if nextEpisodeLabelVisible {
+            userHasInteractedWithTimeLine = true
+        }
+    }
+    
 }
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
