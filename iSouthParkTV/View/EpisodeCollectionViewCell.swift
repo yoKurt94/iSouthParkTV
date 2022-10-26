@@ -13,22 +13,25 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var titleLabel: UILabel!
     var cellType: CellType = .episodes
-        
+    
     var episode: ExcelEpisode? {
         didSet {
-            titleLabel.text = episode!.name
-            if episode != nil {
-                let lazyImage = LazyLoadingImage()
-                lazyImage.loadImageUsingURLString(urlString: episode!.thumbnail_url) { [weak self] image in
-                    guard let strongSelf = self else {
-                        return
-                    }
+            guard let episode = episode else {
+                return
+            }
+            titleLabel.text = episode.name
+            let lazyImage = LazyLoadingImage()
+            lazyImage.loadImageUsingURLString(urlString: episode.thumbnail_url) { [weak self] image, urlstring in
+                guard let strongSelf = self else {
+                    return
+                }
+                if urlstring == episode.thumbnail_url {
                     DispatchQueue.main.async {
                         strongSelf.thumbnailImageView.image = image
                     }
                 }
-                thumbnailImageView.image = lazyImage.image
             }
+            thumbnailImageView.image = lazyImage.image
         }
     }
     
@@ -49,5 +52,11 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
                 self?.thumbnailImageView.layer.borderColor = UIColor.clear.cgColor
             }
         }, completion: nil)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        thumbnailImageView.image = nil
+        episode = nil
     }
 }

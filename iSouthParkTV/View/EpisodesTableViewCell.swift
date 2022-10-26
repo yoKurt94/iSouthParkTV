@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 protocol EpisodesTableViewCellDelegate: AnyObject {
     func didSelectItem(episode: ExcelEpisode, allEpisodes: [ExcelEpisode])
@@ -27,7 +28,6 @@ class EpisodesTableViewCell: UITableViewCell {
         videoCollectionView.delegate = self
         videoCollectionView.dataSource = self
         registerCollectionViewCells()
-        
     }
     
     func registerCollectionViewCells() {
@@ -36,9 +36,7 @@ class EpisodesTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
-
 }
 
 extension EpisodesTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -74,6 +72,10 @@ extension EpisodesTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         }
         delegate?.didSelectItem(episode: episodesForThisSeason![indexPath.item], allEpisodes: allEpisodes)
     }
-    
-    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        allEpisodes?.removeAll()
+        episodesForThisSeason?.removeAll()
+        delegate = nil
+    }
 }

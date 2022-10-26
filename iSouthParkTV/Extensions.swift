@@ -16,7 +16,7 @@ class LazyLoadingImage: UIImageView {
     
     var imageURLString: String?
     
-    func loadImageUsingURLString(urlString: String, completion: @escaping ((UIImage) -> Void)) {
+    func loadImageUsingURLString(urlString: String, completion: @escaping ((UIImage, String) -> Void)) {
         let url = URL(string: urlString)
         imageURLString = urlString
         self.image = nil
@@ -36,7 +36,7 @@ class LazyLoadingImage: UIImageView {
             DispatchQueue.main.async {
                 let imageToCache = UIImage(data: data)
                 if self.imageURLString == urlString {
-                    completion(imageToCache!)
+                    completion(imageToCache!, urlString)
                 }
                 imageCache.setObject(imageToCache!, forKey: urlString as NSString)
             }

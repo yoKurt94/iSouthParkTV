@@ -51,7 +51,7 @@ class DetailViewController: UIViewController {
         descriptionLabel.text = episode!.description
         titleLabel.text = episode!.name
         let lazyImage = LazyLoadingImage()
-        lazyImage.loadImageUsingURLString(urlString: episode!.thumbnail_url) { [weak self] image in
+        lazyImage.loadImageUsingURLString(urlString: episode!.thumbnail_url) { [weak self] image, urlstring in
             guard let strongSelf = self else {
                 return
             }

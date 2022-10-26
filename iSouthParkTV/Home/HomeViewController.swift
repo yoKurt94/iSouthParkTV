@@ -66,8 +66,8 @@ class HomeViewController: UIViewController {
                 var description = "description"
                 var created_at = "created_at"
                 var updated_at = "updated_at"
-                var characters: [String] = []
-                var locations: [String] = []
+                let characters: [String] = []
+                let locations: [String] = []
                 for row in worksheet.data?.rows ?? [] {
                     if row.reference == 1 {
                         for cellValue in row.cells {
