@@ -3,11 +3,7 @@
 //  iSouthParkTV
 //
 //  Created by Yannik Hörnschemeyer on 30.06.22.
-//
-// READ THE AVKIT DOCUMENTATION
-// ADD EPISODE NAMES
-// ADD INDICATOR WHERE THE PERSON WAS
-// SAVE THE LINK FOR SOME TIME
+
 
 import UIKit
 

@@ -10,7 +10,6 @@
 // Fixme: you cannot go back into the previous video
 // Fixme: add en as video language
 // Fixme: title in DetailVC has broken trailing
-// Fixme: reduce redundant code (i.e. the episode network call)
 // Fixme: add German titles and descriptions
 // Fixme: if the user interacts with the player while the automatic next episode label appears, stop the process
 // Fixme: add animation to automatic next episode label
@@ -19,6 +18,7 @@
 
 import UIKit
 import AVKit
+import Kingfisher
 
 class DetailViewController: UIViewController {
 
@@ -50,17 +50,10 @@ class DetailViewController: UIViewController {
         currentEpisodeID = episode!.id
         descriptionLabel.text = episode!.description
         titleLabel.text = episode!.name
-        let lazyImage = LazyLoadingImage()
-        lazyImage.loadImageUsingURLString(urlString: episode!.thumbnail_url) { [weak self] image, urlstring in
-            guard let strongSelf = self else {
-                return
-            }
-            DispatchQueue.main.async {
-                strongSelf.episodeThumbnail.image = image
-            }
+        guard let episode = episode else {
+            return
         }
-        episodeThumbnail.image = lazyImage.image
-        
+        episodeThumbnail.kf.setImage(with: URL(string: episode.thumbnail_url))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -217,24 +210,20 @@ class DetailViewController: UIViewController {
     func makeExternalMetadata() -> [AVMetadataItem] {
         var metadata = [AVMetadataItem]()
         
-        // Build title item
         let titleItem = makeMetadataItem(.commonIdentifierTitle, value: "\(episode?.name ?? "Error loading episode title.")")
         metadata.append(titleItem)
         
-        // Build artwork item
         if let image = UIImage(named: "debugging"), let pngData = image.pngData() {
             let artworkItem = makeMetadataItem(.commonIdentifierArtwork, value: pngData)
             metadata.append(artworkItem)
         }
         
-        // Build description item
         let descItem = makeMetadataItem(.commonIdentifierDescription, value: """
             \(episode?.description ?? "Description could not be loaded.")
             """
         )
         metadata.append(descItem)
         
-        // Build genre item
         let genreItem = makeMetadataItem(.quickTimeMetadataGenre, value: "Entertainment")
         metadata.append(genreItem)
         return metadata

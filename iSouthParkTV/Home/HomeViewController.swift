@@ -8,21 +8,20 @@
 import UIKit
 import CoreXLSX
 
-
 enum CellType: Int, CaseIterable {
     case episodes
     case banner
 }
 
 class HomeViewController: UIViewController {
-
+    
     @IBOutlet weak var homeTableView: UITableView!
     private var episodeArray: [ExcelEpisode] = []
     private var excelHeaders: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         homeTableView.register(UINib(nibName: K.EPISODES_TABLE_VIEW_CELL, bundle: nil), forCellReuseIdentifier: K.EPISODES_TABLE_VIEW_CELL)
         homeTableView.estimatedRowHeight = 300
         homeTableView.rowHeight = UITableView.automaticDimension
@@ -31,6 +30,12 @@ class HomeViewController: UIViewController {
         homeTableView.delegate = self
         getDataFromExcelFile()
         NotificationCenter.default.addObserver(self, selector: #selector(updateProgressBar), name: NSNotification.Name(K.UPDATE_PROGRESSBARS), object: nil)
+    }
+    
+    func filterAllEpisodesForNextDownloads(nextSeason: Int) -> [ExcelEpisode] {
+        episodeArray.filter { episode in
+            return episode.season == nextSeason
+        }
     }
     
     @objc func updateProgressBar(){
@@ -113,11 +118,11 @@ class HomeViewController: UIViewController {
                                 updated_at = stringValueOfCell
                             default:
                                 break
-
+                                
                             }
                             
                         }
-                        episode = ExcelEpisode(id: id, name: name, season: seasonNr, episode: episodeNr, air_date: air_date, wiki_url: wiki_url, thumbnail_url: thumbnail_url, description: description, created_at: created_at, updated_at: updated_at, characters: characters, locations: locations)
+                        episode = ExcelEpisode(id: id, name: name, season: seasonNr, episode: episodeNr, air_date: air_date, wiki_url: wiki_url, thumbnail_url: thumbnail_url, description: description, created_at: created_at, updated_at: updated_at, characters: characters, locations: locations, thumbnailImage: nil)
                         episodeArray.append(episode!)
                     }
                 }
@@ -136,18 +141,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.delegate = self
         cell.titleLabel.text = "Season \(indexPath.row + 1)"
         cell.allEpisodes = episodeArray
-        cell.episodesForThisSeason = episodeArray.filter({ episode in
+        let seasonEpisodes = episodeArray.filter({ episode in
             episode.season == indexPath.row + 1
         })
-        cell.videoCollectionView.reloadData()
+        cell.episodesForThisSeason = seasonEpisodes
+        cell.seasonNo = indexPath.row + 1
         return cell
     }
     
     func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
         return false
     }
-    }
-    
+}
+
 extension HomeViewController: EpisodesTableViewCellDelegate {
     func didSelectItem(episode: ExcelEpisode, allEpisodes: [ExcelEpisode]) {
         if let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: K.DETAILVCID) as? DetailViewController {

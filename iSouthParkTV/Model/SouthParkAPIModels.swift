@@ -72,6 +72,7 @@ struct ExcelEpisode {
     let updated_at: String
     let characters: [String]
     let locations: [String]
+    var thumbnailImage: UIImage?
 }
 
 // MARK:  Models for the VideoLinkAPI

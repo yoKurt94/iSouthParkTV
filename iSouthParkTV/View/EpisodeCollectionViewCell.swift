@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class EpisodeCollectionViewCell: UICollectionViewCell {
     
@@ -20,18 +21,7 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
                 return
             }
             titleLabel.text = episode.name
-            let lazyImage = LazyLoadingImage()
-            lazyImage.loadImageUsingURLString(urlString: episode.thumbnail_url) { [weak self] image, urlstring in
-                guard let strongSelf = self else {
-                    return
-                }
-                if urlstring == episode.thumbnail_url {
-                    DispatchQueue.main.async {
-                        strongSelf.thumbnailImageView.image = image
-                    }
-                }
-            }
-            thumbnailImageView.image = lazyImage.image
+            thumbnailImageView.kf.setImage(with: URL(string: episode.thumbnail_url))
         }
     }
     

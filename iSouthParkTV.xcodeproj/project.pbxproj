@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E11D808290DF74B00A177A0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3E11D807290DF74B00A177A0 /* Kingfisher */; };
 		3E6DF404286E260200959657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DF403286E260200959657 /* AppDelegate.swift */; };
 		3E6DF409286E260200959657 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6DF407286E260200959657 /* Main.storyboard */; };
 		3E6DF40B286E260300959657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E6DF40A286E260300959657 /* Assets.xcassets */; };
@@ -81,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E11D808290DF74B00A177A0 /* Kingfisher in Frameworks */,
 				3E9019DA286ECA620048D363 /* CoreXLSX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +233,7 @@
 			name = iSouthParkTV;
 			packageProductDependencies = (
 				3E9019D9286ECA620048D363 /* CoreXLSX */,
+				3E11D807290DF74B00A177A0 /* Kingfisher */,
 			);
 			productName = iSouthParkTV;
 			productReference = 3E6DF400286E260200959657 /* iSouthParkTV.app */;
@@ -306,6 +309,7 @@
 			mainGroup = 3E6DF3F7286E260200959657;
 			packageReferences = (
 				3E9019D8286ECA620048D363 /* XCRemoteSwiftPackageReference "CoreXLSX" */,
+				3E11D806290DF74B00A177A0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 3E6DF401286E260200959657 /* Products */;
 			projectDirPath = "";
@@ -704,6 +708,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3E11D806290DF74B00A177A0 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		3E9019D8286ECA620048D363 /* XCRemoteSwiftPackageReference "CoreXLSX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CoreOffice/CoreXLSX.git";
@@ -715,6 +727,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3E11D807290DF74B00A177A0 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E11D806290DF74B00A177A0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		3E9019D9286ECA620048D363 /* CoreXLSX */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3E9019D8286ECA620048D363 /* XCRemoteSwiftPackageReference "CoreXLSX" */;

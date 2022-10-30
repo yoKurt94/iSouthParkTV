@@ -18,6 +18,8 @@ class EpisodesTableViewCell: UITableViewCell {
     @IBOutlet weak var videoCollectionView: UICollectionView!
     @IBOutlet weak var videoCollectionViewHeightConstraint: NSLayoutConstraint!
     
+    var seasonNo = Int()
+    var cachedImages = [String: UIImage]()
     var allEpisodes: [ExcelEpisode]?
     var episodesForThisSeason: [ExcelEpisode]?
     weak var delegate: EpisodesTableViewCellDelegate?
@@ -33,7 +35,7 @@ class EpisodesTableViewCell: UITableViewCell {
     func registerCollectionViewCells() {
         videoCollectionView.register(UINib(nibName: K.EPISODE_COLLECTION_VIEW_CELL, bundle: nil), forCellWithReuseIdentifier: K.EPISODE_COLLECTION_VIEW_CELL)
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -54,7 +56,6 @@ extension EpisodesTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         if prg == 0 || prg > Float(0.85) {
             cell.progressBar.isHidden = true
         }
-
         else {
             cell.progressBar.isHidden = false
             cell.progressBar.progress = prg
@@ -72,9 +73,11 @@ extension EpisodesTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         }
         delegate?.didSelectItem(episode: episodesForThisSeason![indexPath.item], allEpisodes: allEpisodes)
     }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         allEpisodes?.removeAll()
+        videoCollectionView.reloadData()
         episodesForThisSeason?.removeAll()
         delegate = nil
     }
