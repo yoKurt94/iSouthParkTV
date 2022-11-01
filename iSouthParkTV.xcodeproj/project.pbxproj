@@ -22,6 +22,8 @@
 		3E6DF43C286E277500959657 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DF43B286E277500959657 /* DetailViewController.swift */; };
 		3E76BCE0286E2EA100EDB707 /* EpisodesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E76BCDE286E2EA100EDB707 /* EpisodesTableViewCell.swift */; };
 		3E76BCE1286E2EA100EDB707 /* EpisodesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E76BCDF286E2EA100EDB707 /* EpisodesTableViewCell.xib */; };
+		3E7AC92A290FDDC700AF1734 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AC928290FDDC700AF1734 /* SearchResultTableViewCell.swift */; };
+		3E7AC92B290FDDC700AF1734 /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E7AC929290FDDC700AF1734 /* SearchResultTableViewCell.xib */; };
 		3E8D148B286F68C000ABDF78 /* southparkEpisodes.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3E8D148A286F68C000ABDF78 /* southparkEpisodes.xlsx */; };
 		3E8D148D286F7FE000ABDF78 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D148C286F7FE000ABDF78 /* Services.swift */; };
 		3E9019D0286EC5EA0048D363 /* EpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9019CE286EC5EA0048D363 /* EpisodeCollectionViewCell.swift */; };
@@ -67,6 +69,8 @@
 		3E6DF43B286E277500959657 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3E76BCDE286E2EA100EDB707 /* EpisodesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTableViewCell.swift; sourceTree = "<group>"; };
 		3E76BCDF286E2EA100EDB707 /* EpisodesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodesTableViewCell.xib; sourceTree = "<group>"; };
+		3E7AC928290FDDC700AF1734 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		3E7AC929290FDDC700AF1734 /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
 		3E8D148A286F68C000ABDF78 /* southparkEpisodes.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = southparkEpisodes.xlsx; sourceTree = "<group>"; };
 		3E8D148C286F7FE000ABDF78 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		3E8D148E286F89EC00ABDF78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 				3E76BCDF286E2EA100EDB707 /* EpisodesTableViewCell.xib */,
 				3E9019CE286EC5EA0048D363 /* EpisodeCollectionViewCell.swift */,
 				3E9019CF286EC5EA0048D363 /* EpisodeCollectionViewCell.xib */,
+				3E7AC928290FDDC700AF1734 /* SearchResultTableViewCell.swift */,
+				3E7AC929290FDDC700AF1734 /* SearchResultTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,6 +231,7 @@
 				3E6DF3FC286E260200959657 /* Sources */,
 				3E6DF3FD286E260200959657 /* Frameworks */,
 				3E6DF3FE286E260200959657 /* Resources */,
+				3E7AC92C29109ED300AF1734 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -331,6 +338,7 @@
 				3E9019D1286EC5EA0048D363 /* EpisodeCollectionViewCell.xib in Resources */,
 				3E76BCE1286E2EA100EDB707 /* EpisodesTableViewCell.xib in Resources */,
 				3E6DF40B286E260300959657 /* Assets.xcassets in Resources */,
+				3E7AC92B290FDDC700AF1734 /* SearchResultTableViewCell.xib in Resources */,
 				3E8D148B286F68C000ABDF78 /* southparkEpisodes.xlsx in Resources */,
 				3E6DF409286E260200959657 /* Main.storyboard in Resources */,
 			);
@@ -352,6 +360,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3E7AC92C29109ED300AF1734 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3E6DF3FC286E260200959657 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -368,6 +397,7 @@
 				3E6DF438286E275C00959657 /* SearchViewController.swift in Sources */,
 				3E6DF43A286E276900959657 /* SettingsViewController.swift in Sources */,
 				3E6DF436286E274E00959657 /* HomeViewController.swift in Sources */,
+				3E7AC92A290FDDC700AF1734 /* SearchResultTableViewCell.swift in Sources */,
 				3E6DF43C286E277500959657 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

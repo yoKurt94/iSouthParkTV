@@ -21,13 +21,14 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
                 return
             }
             titleLabel.text = episode.name
-            thumbnailImageView.kf.setImage(with: URL(string: episode.thumbnail_url))
+            thumbnailImageView.kf.indicatorType = .activity
+            thumbnailImageView.kf.setImage(with: URL(string: episode.thumbnail_url), options: [.transition(.flipFromBottom(1))])
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        thumbnailImageView.layer.cornerRadius = 20
+        thumbnailImageView.layer.cornerRadius = K.CORNER_RADIUS
         thumbnailImageView.clipsToBounds = true
         thumbnailImageView.layer.borderWidth = 10
         thumbnailImageView.layer.borderColor = UIColor.clear.cgColor

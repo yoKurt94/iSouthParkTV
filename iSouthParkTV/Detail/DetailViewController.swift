@@ -53,7 +53,8 @@ class DetailViewController: UIViewController {
         guard let episode = episode else {
             return
         }
-        episodeThumbnail.kf.setImage(with: URL(string: episode.thumbnail_url))
+        episodeThumbnail.kf.indicatorType = .activity
+        episodeThumbnail.kf.setImage(with: URL(string: episode.thumbnail_url), options: [.transition(.fade(1))])
     }
     
     override func viewWillAppear(_ animated: Bool) {

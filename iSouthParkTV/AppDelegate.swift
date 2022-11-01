@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.HOMEVCID)
+        let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.HOMEVCID) as! HomeViewController
         homeVC.tabBarItem.title = "Home"
         
         let searchVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.SEARCHVCID)
@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabbarController.viewControllers = [homeVC, searchVC, settingsVC]
         self.window?.rootViewController = tabbarController
         self.window?.makeKeyAndVisible()
+        tabbarController.delegate = homeVC
         
         return true
     }

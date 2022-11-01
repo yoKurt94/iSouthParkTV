@@ -51,8 +51,34 @@
                     <view key="view" contentMode="scaleToFill" id="RBo-EM-hdH">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ar-zo-vOW">
+                                <rect key="frame" x="760" y="68" width="400" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="FcY-IO-w1m"/>
+                                    <constraint firstAttribute="width" constant="400" id="TmD-QW-Nvb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="OuN-RF-anT">
+                                <rect key="frame" x="80" y="206" width="1760" height="814"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="n8u-yJ-zGc"/>
+                        <constraints>
+                            <constraint firstItem="2Ar-zo-vOW" firstAttribute="centerX" secondItem="RBo-EM-hdH" secondAttribute="centerX" id="8YA-k5-DN7"/>
+                            <constraint firstItem="n8u-yJ-zGc" firstAttribute="bottom" secondItem="OuN-RF-anT" secondAttribute="bottom" id="E8w-sn-5nL"/>
+                            <constraint firstItem="OuN-RF-anT" firstAttribute="leading" secondItem="n8u-yJ-zGc" secondAttribute="leading" id="Kwu-qy-qsk"/>
+                            <constraint firstItem="n8u-yJ-zGc" firstAttribute="trailing" secondItem="OuN-RF-anT" secondAttribute="trailing" id="iyS-6o-L33"/>
+                            <constraint firstItem="2Ar-zo-vOW" firstAttribute="top" secondItem="n8u-yJ-zGc" secondAttribute="top" constant="8" id="y1W-dX-bcV"/>
+                            <constraint firstItem="OuN-RF-anT" firstAttribute="top" secondItem="2Ar-zo-vOW" secondAttribute="bottom" constant="70" id="zXg-Jr-49i"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="2Ar-zo-vOW" id="qUR-TX-L3z"/>
+                        <outlet property="tableView" destination="OuN-RF-anT" id="gln-oF-Vib"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qTC-vf-pyZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

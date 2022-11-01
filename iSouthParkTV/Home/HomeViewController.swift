@@ -160,6 +160,15 @@ extension HomeViewController: EpisodesTableViewCellDelegate {
             detailVC.episode = episode
             detailVC.allEpisodes = allEpisodes
             self.present(detailVC, animated: true, completion: nil)
+        } 
+    }
+}
+
+extension HomeViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if viewController is SearchViewController {
+            let searchVC = viewController as! SearchViewController
+            searchVC.allEpisodes = episodeArray
         }
     }
 }
