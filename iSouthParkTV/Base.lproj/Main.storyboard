@@ -234,8 +234,34 @@
                     <view key="view" contentMode="scaleToFill" id="icu-dJ-fcx">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="rvr-5h-lvv">
+                                <rect key="frame" x="974" y="60" width="866" height="960"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="866" id="3cW-Qi-O7i"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PrototypeCell" id="2hB-UF-kcb">
+                                        <rect key="frame" x="0.0" y="66" width="866" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2hB-UF-kcb" id="dgl-6P-gLh">
+                                            <rect key="frame" x="0.0" y="0.0" width="866" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="iHf-LI-rO6"/>
+                        <constraints>
+                            <constraint firstItem="iHf-LI-rO6" firstAttribute="trailing" secondItem="rvr-5h-lvv" secondAttribute="trailing" id="ZCm-Lf-7XL"/>
+                            <constraint firstItem="rvr-5h-lvv" firstAttribute="top" secondItem="iHf-LI-rO6" secondAttribute="top" id="mM1-fR-eUS"/>
+                            <constraint firstItem="rvr-5h-lvv" firstAttribute="bottom" secondItem="iHf-LI-rO6" secondAttribute="bottom" id="meh-qB-nCN"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="rvr-5h-lvv" id="n8i-0c-bee"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sV3-aa-CMf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

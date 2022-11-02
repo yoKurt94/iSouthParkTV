@@ -21,6 +21,7 @@ struct K {
     // MARK: TableViews
     public static let EPISODES_TABLE_VIEW_CELL = "EpisodesTableViewCell"
     public static let SEARCH_RESULT_TABLEVIEW_CELL = "SearchResultTableViewCell"
+    public static let PROTOTYPE_CELL = "PrototypeCell"
     
     // MARK: NotificationCenter
     public static let UPDATE_PROGRESSBARS = "updateProgressbar"
