@@ -15,7 +15,6 @@
 // Fixme: add animation to automatic next episode label
 // Fixme: stop automatic next episode when the player is dismissed
 
-
 import UIKit
 import AVKit
 import Kingfisher
@@ -45,6 +44,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Running")
         playerController.delegate = self
         setupTableView()
         currentEpisodeID = episode!.id
@@ -99,6 +99,7 @@ class DetailViewController: UIViewController {
                         print("There is something wrong with the URL")
                         return
                     }
+                    print(link)
                     strongSelf.avAssets.append(AVAsset(url: url))
                     strongSelf.urls.append(url)
                 }

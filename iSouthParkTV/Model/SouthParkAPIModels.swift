@@ -77,72 +77,40 @@ struct ExcelEpisode {
 
 // MARK:  Models for the VideoLinkAPI
 
-enum VideoLinkAPIEpisodeElement: Codable {
-    case episodeClass(VideoLinkAPIEpisodeFraction)
-    case integer(Int)
-
-    init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        if let x = try? container.decode(Int.self) {
-            self = .integer(x)
-            return
-        }
-        if let x = try? container.decode(VideoLinkAPIEpisodeFraction.self) {
-            self = .episodeClass(x)
-            return
-        }
-        throw DecodingError.typeMismatch(VideoLinkAPIEpisodeElement.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for EpisodeElement"))
-    }
-
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        switch self {
-        case .episodeClass(let x):
-            try container.encode(x)
-        case .integer(let x):
-            try container.encode(x)
-        }
-    }
-}
-
-struct VideoLinkAPIEpisodeFraction: Codable {
+struct WelcomeElement: Codable {
     let title: String
     let formats: [Format]
-    //let subtitles: Subtitles
+    let subtitles: Subtitles
     let id: String
     let thumbnail: String
-    let episodeDescription: JSONNull?
+    let description: JSONNull?
     let duration: Int
     let timestamp: JSONNull?
     let series: String
     let seasonNumber, episodeNumber: Int
 
     enum CodingKeys: String, CodingKey {
-        case title, id, formats, thumbnail
-        case episodeDescription = "description"
-        case duration, timestamp, series
+        case title, formats, subtitles, id, thumbnail, description, duration, timestamp, series
         case seasonNumber = "season_number"
         case episodeNumber = "episode_number"
     }
 }
 
+// MARK: - Format
 struct Format: Codable {
     let formatID: String
     let formatIndex: JSONNull?
     let url, manifestURL: String
     let tbr: Double
-    let ext: VideoEXTEnum
+    let ext: FormatEXT
     let fps: Double
     let formatProtocol: ProtocolEnum
     let preference, quality: JSONNull?
+    let hasDRM: Bool
     let width, height: Int
     let vcodec: Vcodec
     let acodec: Acodec
     let dynamicRange: JSONNull?
-    let videoEXT: VideoEXTEnum
-    let audioEXT: AudioEXT
-    let vbr: Double
-    let abr: Int
 
     enum CodingKeys: String, CodingKey {
         case formatID = "format_id"
@@ -151,11 +119,10 @@ struct Format: Codable {
         case manifestURL = "manifest_url"
         case tbr, ext, fps
         case formatProtocol = "protocol"
-        case preference, quality, width, height, vcodec, acodec
+        case preference, quality
+        case hasDRM = "has_drm"
+        case width, height, vcodec, acodec
         case dynamicRange = "dynamic_range"
-        case videoEXT = "video_ext"
-        case audioEXT = "audio_ext"
-        case vbr, abr
     }
 }
 
@@ -163,11 +130,7 @@ enum Acodec: String, Codable {
     case mp4A402 = "mp4a.40.2"
 }
 
-enum AudioEXT: String, Codable {
-    case none = "none"
-}
-
-enum VideoEXTEnum: String, Codable {
+enum FormatEXT: String, Codable {
     case mp4 = "mp4"
 }
 
@@ -181,24 +144,26 @@ enum Vcodec: String, Codable {
     case avc1640028 = "avc1.640028"
 }
 
-//struct Subtitles: Codable {
-//    let en: [En]
-//}
-
-// MARK: - En
-struct En: Codable {
-    let url: String
-    let ext: EnEXT
+// MARK: - Subtitles
+struct Subtitles: Codable {
+    let de: [De]
 }
 
-enum EnEXT: String, Codable {
+// MARK: - De
+struct De: Codable {
+    let url: String
+    let ext: DeEXT
+}
+
+enum DeEXT: String, Codable {
     case scc = "scc"
     case ttml = "ttml"
     case vtt = "vtt"
 }
 
-typealias VideoLinkAPIObject = [[VideoLinkAPIEpisodeElement]]
+typealias Welcome = [WelcomeElement]
 
+// MARK: - Encode/decode helpers
 
 class JSONNull: Codable, Hashable {
 
@@ -224,8 +189,3 @@ class JSONNull: Codable, Hashable {
         try container.encodeNil()
     }
 }
-
-
-
-
-
