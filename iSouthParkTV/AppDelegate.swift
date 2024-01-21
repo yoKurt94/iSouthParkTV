@@ -22,11 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let searchVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.SEARCHVCID)
         searchVC.tabBarItem.title = "Search"
         
-        let settingsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.SETTINGSVCID)
-        settingsVC.tabBarItem.title = "Settings"
+//        let settingsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.SETTINGSVCID)
+//        settingsVC.tabBarItem.title = "Settings"
         
         let tabbarController = UITabBarController()
-        tabbarController.viewControllers = [homeVC, searchVC, settingsVC]
+        tabbarController.viewControllers = [homeVC, searchVC]
         self.window?.rootViewController = tabbarController
         self.window?.makeKeyAndVisible()
         tabbarController.delegate = homeVC
