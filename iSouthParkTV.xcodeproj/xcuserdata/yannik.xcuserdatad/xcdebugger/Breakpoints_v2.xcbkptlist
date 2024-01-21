@@ -455,7 +455,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "FFA99006-71FC-4C1A-9F72-AACD06A1A030"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iSouthParkTV/Detail/DetailViewController.swift"
@@ -465,6 +465,38 @@
             endingLineNumber = "103"
             landmarkName = "didClickOnPlayButton(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FFA99006-71FC-4C1A-9F72-AACD06A1A030 - 2684e17f73c014ad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;Swift.String&gt;, Swift.Error&gt;) -&gt; () in iSouthParkTV.DetailViewController.didClickOnPlayButton(__C.UIButton) -&gt; ()"
+                  moduleName = "iSouthParkTV"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yannik/Documents/Development/XCode/iSouthParkTV/iSouthParkTV/Detail/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "1396">
+               </Location>
+               <Location
+                  uuid = "FFA99006-71FC-4C1A-9F72-AACD06A1A030 - 2684e17f73c014ad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;Swift.String&gt;, Swift.Error&gt;) -&gt; () in iSouthParkTV.DetailViewController.didClickOnPlayButton(__C.UIButton) -&gt; ()"
+                  moduleName = "iSouthParkTV"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yannik/Documents/Development/XCode/iSouthParkTV/iSouthParkTV/Detail/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "1288">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
