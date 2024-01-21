@@ -3,12 +3,16 @@
 ## About The Project
 
 This AppleTV app streams SouthPark episodes from SouthPark.com. No API key needed. Just download the project and deploy it to your AppleTV. 
+The episodes will be played in 3-4 smaller video sections. That's because the MTV server divides each episode into smaller sections to play ads in between them.
 
 
 ## Requirements
 
 - XCode
 - AppleTV4
+
+## Seeing no video in the simulator? 
+For some reason, there is currently no video, only audio, in the simulator. If you'd copy the .m3u8 link of the episode into Safari, you can watch it. Running the app on an actual AppleTV also works fine. 
 
 ## Contributions
 
